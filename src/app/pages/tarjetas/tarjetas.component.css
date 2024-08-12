@@ -1,0 +1,280 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #fff;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content:center;
+}
+
+.container__general{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%; 
+    height: 85%; 
+    background-color: #000835;
+    margin: 3%;
+    padding: 1% 0;
+    /* padding: 25px 5px; */
+    /* position: absolute; */
+    /* top: 10%; */
+    /* left: 20%; */
+    /* transform: translate(-50%, -50%); */
+
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 16px;
+    margin: 1%;
+    color: #fff;
+    height: 20%;
+}
+
+
+.scale-in-ver-center {
+    -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-ver-center {
+    0% {
+    -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        opacity: 1;
+    }
+    100% {
+    -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+@keyframes scale-in-ver-center {
+    0% {
+    -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        opacity: 1;
+    }
+    100% {
+    -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.scale-in-ver-center{
+    -webkit-box-shadow: 9px 9px 22px -9px #3a8bff;
+    -moz-box-shadow: 9px 9px 22px -9px #3a8bff;
+    box-shadow: 9px 9px 22px -9px #3a8bff;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 50%;
+    
+}
+
+.card{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+}
+
+.card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: 0.8s;
+}
+
+.card .front{
+    transform: perspective(600px) rotateY(0deg);
+    -webkit-box-shadow: 18px 14px 0px 2px #c5d5f9;
+    -moz-box-shadow: 18px 14px 0px 2px #c5d5f9;
+    box-shadow: 18px 14px 0px 2px #c5d5f9;
+
+}
+
+.card .front img{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .back {
+    transform:perspective(600px) rotateY(180deg);
+    background:#c5d5f9 ;
+    padding: 15px;
+    color:#3a8bff;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    text-align: center;
+    box-shadow: 0 5px 10px #3a8bff;
+}
+
+.card .back .h3{
+    font-size: 30px;
+    margin-top:20px;
+    letter-spacing:2px ;
+} 
+
+.card .back p{
+    letter-spacing: 1px;
+}
+
+.card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+    
+}
+
+.card:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.navegacion {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 10px 20px 10px;
+    /* height: 50px; */
+    height: 20%;
+}
+
+.navegacion ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.navegacion ul li{
+    border-radius: 10px;
+
+}
+
+.navegacion ul li a{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 15px;
+    color: #000835;
+    text-decoration: none;
+    background-color:#c5d5f9;
+    border-radius: 10px;
+    position: relative;
+    
+    &:hover{ 
+            color: #c5d5f9;
+            background-color: #3a8bff;
+    }  
+
+    &[active] {
+        color: #c5d5f9;
+        background-color:#3a8bff;
+        
+    }
+    
+    &::before{ 
+        content: url(../../../assets/img/aeronave.png);
+        position:absolute;
+        bottom: 70px;
+        right: 4px;
+        width: 100%;
+        height: 4%;
+        
+
+        opacity: 0;
+    }
+
+    &.selected::before{
+        opacity: 1;
+    } 
+    
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10%;
+}
+
+button{
+    border-radius: 8px;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    color: #000835;
+    padding: 5px 10px;
+    
+}
+
+button:hover{
+    color: #c5d5f9;
+    background-color: #3a8bff;
+}
+
+@media screen and(max-width:767px){
+    body{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .navegacion {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .botones{
+        display: flex;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+    body{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+

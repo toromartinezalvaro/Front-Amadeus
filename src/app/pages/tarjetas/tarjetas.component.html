@@ -1,1 +1,69 @@
-<p>tarjetas works!</p>
+<main class="container__general">
+    <div class="titulo">
+        <h1 class="scale-in-ver-center">{{pregunta}}</h1>
+    </div>
+    
+    <div class="container">
+
+        <div class="card">
+            <div class="face front">
+                <img [src]="img1" alt="imagen_playa">
+                <h3>{{opcion1}}</h3>
+            </div>
+
+            <div class="face back">
+                <h3>¿Sabias qué...</h3>
+                <p>{{dato1}}
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="face front">
+                <img [src]="img2" alt="imagen_montaña">
+                <h3>{{opcion2}}</h3>
+            </div>
+
+            <div class="face back">
+                <h3>¿Sabias qué...</h3>
+                <p>{{dato2}}
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="face front">
+                <img [src]="img3"  alt="imagen_cuidad">
+                <h3>{{opcion3}}</h3>
+            </div>
+        
+            <div class="face back">
+                <h3>¿Sabias qué...</h3>
+                <p>{{dato3}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navegacion">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="./card1.html">1</a></li>
+                <li><a href="#" class="selected" active>2</a></li>
+                <li><a href="/page/card3.html">3</a></li>
+                <li><a href="">4</a></li>
+                <li><a href="">5</a></li>
+                <li><a href="">6</a></li>
+                <li><a href="">7</a></li>
+                <li><a href="">8</a></li>
+                <li><a href="">9</a></li>
+                <li><a href="">10</a></li>
+                <li><a href="">11</a></li>
+            </ul>
+    </div>
+
+    <div class="botones">
+        <button type="button" (click)="atras()">Atrás</button>
+        <button type="button" (click)="siguiente()">Siguiente</button>
+    </div>
+</main>
