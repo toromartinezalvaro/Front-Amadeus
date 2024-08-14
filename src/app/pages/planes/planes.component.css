@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000835;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.txt-parrafo {
+  font-size: 15px;
+  color: #f9fafc;
+  margin-bottom: 35px;
+  padding: 0 100px;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.header-content {
+  text-align: center;
+}
+.header-content h1 {
+  font-size: 20px;
+  line-height: 80px;
+  color: #f9fafc;
+  text-transform: uppercase;
+  /* margin-bottom: 35px; */
+}
+.destino-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.destino-container h2 {
+  font-size: 20px;
+  line-height: 70px;
+  color: #f9fafc;
+  text-transform: uppercase;
+  margin: 0px;
+  /* padding: 0 250px;
+  margin-bottom: 15px; */
+}
+.destino-group {
+  display: flex;
+  justify-content: space-between;
+}
+.carmen-img {
+  width: 400px;
+  height: auto;
+  /* padding: 25px; */
+}
+.Santorini-img {
+  width: 320px;
+  height: auto;
+  /* padding: 25px; */
+}
+.hospedaje-container {
+  text-align: center;
+  background-color: #f9fafc;
+}
+.hospedaje-container p {
+  font-size: 15px;
+  color: #000835;
+  margin-bottom: 35px;
+  padding: 0 100px;
+}
+.hospedaje-container h2 {
+  font-size: 20px;
+  line-height: 70px;
+  color: #000835;
+  text-transform: uppercase;
+  margin: 0px;
+  /* padding: 0 250px;
+  margin-bottom: 15px; */
+}
+.hospedaje-container h3 {
+  font-size: 20px;
+  line-height: 70px;
+  color: #000835;
+  margin: 0px;
+  /* padding: 0 250px;
+  margin-bottom: 15px; */
+}
+.hospedaje-group {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 50px; */
+}
+.vuelo-container {
+  text-align: center;
+}
+.vuelo-container h2 {
+  font-size: 20px;
+  line-height: 70px;
+  color: #f9fafc;
+  text-transform: uppercase;
+  margin: 0px;
+  /* padding: 0 250px;
+    margin-bottom: 15px; */
+}
+.vuelo-container h3 {
+  font-size: 20px;
+  line-height: 70px;
+  color: #f9fafc;
+  margin: 0px;
+  /* padding: 0 250px;
+    margin-bottom: 15px; */
+}
+.vuelo-group {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 50px; */
+}
+@media (max-width: 991px) {
+  .header {
+    min-height: 0vh;
+  }
+  .header-content {
+    padding: 100px 30px;
+  }
+  .txt-parrafo {
+    padding: 0;
+  }
+  .destino-container {
+    padding: 30px;
+  }
+  .destino-container h2 {
+    padding: 0;
+  }
+
+  .destino-group {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .carmen-img {
+    display: none;
+  }
+  .Santorini-img {
+    display: none;
+  }
+
+  .hospedaje-container {
+    padding: 30px;
+  }
+  .hospedaje-container h2 {
+    padding: 0;
+  }
+  .hospedaje-container h3 {
+    padding: 0;
+  }
+  .hospedaje-group {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .vuelo-container {
+    padding: 30px;
+  }
+  .vuelo-container h2 {
+    padding: 0;
+  }
+  .vuelo-container h3 {
+    padding: 0;
+  }
+  .vuelo-group {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
