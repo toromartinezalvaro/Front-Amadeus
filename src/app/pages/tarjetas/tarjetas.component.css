@@ -5,6 +5,12 @@
     font-family: sans-serif;
 }
 
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
 body{
     background-color: #fff;
     font-family: "Montserrat", sans-serif;
@@ -15,14 +21,12 @@ body{
 .container__general{
     display: flex;
     flex-direction:column;
-    justify-content: center;
     flex-wrap: wrap;
-    width: 100%; 
+    width: 90%; 
     height: 85%; 
     background-color: #000835;
-    margin: 3%;
-    padding: 1% 0;
-    /* padding: 25px 5px; */
+    margin: 5%;
+    padding: 25px 5px;
     /* position: absolute; */
     /* top: 10%; */
     /* left: 20%; */
@@ -36,9 +40,8 @@ body{
     flex-wrap: wrap;
     text-align: center;
     font-size: 16px;
-    margin: 1%;
+    margin: 20px;
     color: #fff;
-    height: 20%;
 }
 
 
@@ -48,18 +51,6 @@ body{
 }
 
 @-webkit-keyframes scale-in-ver-center {
-    0% {
-    -webkit-transform: scaleY(0);
-        transform: scaleY(0);
-        opacity: 1;
-    }
-    100% {
-    -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        opacity: 1;
-    }
-}
-@keyframes scale-in-ver-center {
     0% {
     -webkit-transform: scaleY(0);
         transform: scaleY(0);
@@ -83,10 +74,8 @@ body{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 50%;
     
 }
-
 .card{
     position: relative;
     width: 250px;
@@ -125,7 +114,7 @@ body{
     height: 45px;
     line-height: 45px;
     color: #fff;
-    background: rgba(0,0,0,.4);
+    background: #00000066;
     text-align: center;
 }
 
@@ -165,21 +154,20 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     margin: 30px 10px 20px 10px;
-    /* height: 50px; */
-    height: 20%;
+    height: 50px;
 }
 
 .navegacion ul {
     list-style: none;
-    text-align: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     gap: 10px;
 }
 
 .navegacion ul li{
     border-radius: 10px;
+    width: auto;
 
 }
 
@@ -208,7 +196,7 @@ body{
         content: url(../../../assets/img/aeronave.png);
         position:absolute;
         bottom: 70px;
-        right: 4px;
+        right: -8px;
         width: 100%;
         height: 4%;
         
@@ -226,8 +214,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
-    height: 10%;
+    
 }
 
 button{
@@ -237,7 +224,7 @@ button{
     height: auto;
     color: #000835;
     padding: 5px 10px;
-    
+    margin: auto;
 }
 
 button:hover{
@@ -245,24 +232,45 @@ button:hover{
     background-color: #3a8bff;
 }
 
+
 @media screen and(max-width:767px){
     body{
         display:flex;
         flex-direction: column;
     }
 
-    .container{
-        display: flex;
-        flex-direction: column;
+    .titulo{
+        width: 85%;
+        height: 75%;
     }
     
     .navegacion {
-        display: flex;
-        flex-direction: column;
-        
+        align-items: center;
+        height: auto;
     }
+
+    .navegacion ul {
+        justify-content: center;
+        gap: 10px;
+    } 
+    .navegacion ul li a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container{
+        width: 85%;
+    }
+    .container__general{
+        width: 100%;
+        height: auto;
+        padding: 15px 5px;
+        margin: 2%;
+    }  
+
     .botones{
-        display: flex;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -276,5 +284,67 @@ button:hover{
         display: flex;
         flex-direction: column;
     }
+    .container__general {
+        width: 100%;
+    }
 }
 
+@media (max-width: 470px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .titulo{
+        width: 85%;
+    }
+    .navegacion {
+        align-items: center;
+        height: auto;
+    }
+
+    .navegacion ul {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navegacion ul li {
+        flex: 0 1 calc(33.333% - 28px );
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .navegacion ul li a {
+        width: 100%;
+        text-align: center;
+
+        &::before{ 
+            content: url(../../../assets/img/aeronave.png);
+            position:absolute;
+            bottom: 63px;
+            right: -8px;
+            width: 100%;
+            height: 2%;
+            
+    
+            opacity: 0;
+        }
+    
+        &.selected::before{
+            opacity: 1;
+        } 
+    }
+
+    .container__general {
+        width: 100%;
+    }
+    .container {
+        width: 95%;
+    }
+    .container__general {
+        width: 100%;
+        height: auto;
+        padding: 15px 5px;
+        margin: 2%;
+    }
+}

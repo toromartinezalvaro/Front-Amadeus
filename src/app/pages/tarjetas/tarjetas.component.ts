@@ -15,7 +15,7 @@ export class TarjetasComponent {
     "¿Que clima prefieres durante tus vacaciones?",
     "¿Que tipo de actividades prefieres hacer durante tus vacaciones?",
     "¿Que tipo de alojamiento prefieres?",
-    "¿Cuanto tiemplo planeas quedarte de vacaciones?" ,
+    "¿Cuánto tiemplo planeas quedarte de vacaciones?" ,
     "¿Cuál es tu rango de edad?"
   ];
 
@@ -30,11 +30,11 @@ export class TarjetasComponent {
 
   imgUrl =[
     ["../../../assets/img/imagen1.jpg","../../../assets/img/imagen2.jpg","../../../assets/img/imagen3.jpg"],
-    ["../../../assets/img/imagen1.jpg","../../../assets/img/imagen2.jpg","../../../assets/img/imagen3.jpg"],
-    ["../../../assets/img/imagen1.jpg","../../../assets/img/imagen2.jpg","../../../assets/img/imagen3.jpg"],
-    ["../../../assets/img/imagen1.jpg","../../../assets/img/imagen2.jpg","../../../assets/img/imagen3.jpg"],
-    ["../../../assets/img/imagen1.jpg","../../../assets/img/imagen2.jpg","../../../assets/img/imagen3.jpg"],
-    ["../../../assets/img/imagen1.jpg","../../../assets/img/imagen2.jpg","../../../assets/img/imagen3.jpg"]
+    ["../../../assets/img/Tulum.jpg","../../../assets/img/Templado.jpg","../../../assets/img/Frio.jpg"],
+    ["../../../assets/img/Aventura.jpg","../../../assets/img/cultura.jpg","../../../assets/img/relax.jpg"],
+    ["../../../assets/img/hotelujo.jpg","../../../assets/img/hostal.jpg","../../../assets/img/airbnb.jpg"],
+    ["../../../assets/img/findesemana.jpg","../../../assets/img/dosemanas.jpg","../../../assets/img/calendario.jpg"],
+    ["../../../assets/img/veinte.jpg","../../../assets/img/treinta.jpg","../../../assets/img/cincuenta.jpg"]
   ]
 
   dato = [
@@ -47,12 +47,21 @@ export class TarjetasComponent {
       "En lugares con clima frío, el turismo se concentra principalmente en los meses de invierno, cuando la nieve cubre el paisaje y se pueden practicar deportes como el esquí, el snowboard y el patinaje sobre hielo."
     ],
     ["Desde las montañas de Nepal hasta los ríos de Costa Rica, existen numerosos destinos que ofrecen experiencias únicas para los amantes de la adrenalina.",
-      "Al visitar estos museos, los viajeros pueden imaginar cómo era la vida en la corte real y apreciar la arquitectura y el diseño de una época pasada.",
+      "Al visitar los museos, los viajeros pueden imaginar cómo era la vida en la corte real y apreciar la arquitectura y el diseño de una época pasada.",
       "Al visitar un baño termal, los viajeros pueden conectar con las tradiciones de culturas antiguas y experimentar una forma de relajación que ha sido practicada durante siglos."
     ],
-    [],
-    [],
-    []
+    ["Algunos de los hoteles más lujosos del mundo ofrecen experiencias tan exclusivas que incluyen la posibilidad de tener un mayordomo personal que se encargue de todos tus caprichos, desde preparar un baño relajante hasta reservar una mesa en el restaurante más exclusivo de la ciudad",
+      "Muchos de los hostales y albergues más populares del mundo se encuentran ubicados en edificios históricos o con una arquitectura única",
+      "Airbnb o apartamento:Airbnb nació de una necesidad de alojamiento económico durante un evento en San Francisco."
+    ],
+    ["Estudios han demostrado que incluso viajes cortos pueden tener un impacto significativo en la reducción del estrés y la mejora del estado de ánimo.",
+      "Estudios han demostrado que este rango de tiempo permite sumergirte en la cultura local, conocer a fondo un lugar y crear recuerdos duraderos sin sentirte apresurado o abrumado.",
+      "Viajes prolongados te permiten desconectar completamente de tu rutina diaria y volver a casa sintiéndote renovado y con una nueva perspectiva de la vida."
+    ],
+    ["Viajar en la veintena te ayuda a desarrollar habilidades como la independencia, la adaptabilidad y la tolerancia a la incertidumbre, lo cual es fundamental para tu crecimiento personal.",
+      "A menudo, se busca ir más allá de los destinos turísticos más populares y descubrir lugares menos conocidos, con una mayor conexión con la cultura local.",
+      "Muchos viajeros mayores se unen a grupos organizados para conocer a personas con intereses similares y compartir experiencias."
+    ]
   ]
 
   pregunta = this.preguntaA[this.indice];
