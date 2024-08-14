@@ -9,17 +9,17 @@
             </div>
 
             <div class="opcion__destino">
-                <input value="Playa del Carmen" class="opcion__encabezado__destino focus-in-expand" type="text" readonly id="destinoAmerica">
+                <input [value]="america" class="opcion__encabezado__destino focus-in-expand" type="text" readonly id="destinoAmerica">
             </div>
 
             <div class="opcion__imagen">
-                <img src="../../../assets/img/PlayaDelCarmen.jpg" alt="Destino en America" id="imagenAmerica">
+                <img [src]="srcA" alt="Destino en America" id="imagenAmerica">
                 <div class="overlay">
                     <div class="text">
-                        <p>Pais:</p> <input class="text__input" type="text" value="México" readonly>
-                        <p>Idioma:</p><input class="text__input" type="text" value="Español" readonly>
-                        <p>Lugar Imperdible:</p><input class="text__input" type="text" value="Chichén-Itzá" readonly>
-                        <p>Comida típica:</p><input class="text__input" type="text" value="Salbutes" readonly>
+                        <p>Pais:</p> <input class="text__input" type="text" [value]="datosA[0]" readonly>
+                        <p>Idioma:</p><input class="text__input" type="text" [value]="datosA[1]" readonly>
+                        <p>Lugar Imperdible:</p><input class="text__input" type="text" [value]="datosA[2]" readonly>
+                        <p>Comida típica:</p><input class="text__input" type="text" [value]="datosA[3]" readonly>
                     </div>
                 </div>
             </div>
@@ -38,18 +38,17 @@
             </div>
 
             <div class="opcion__destino">
-                <input value="Santorini" class="opcion__encabezado__destino focus-in-expand" type="text" readonly id="destinoEuropa">
+                <input [value]="europa" class="opcion__encabezado__destino focus-in-expand" type="text" readonly id="destinoEuropa">
             </div>
 
             <div class="opcion__imagen">
-                <img src="../../../assets/img/Santorini.jpg" alt="Destino en Europa" id="imagenEuropa">
+                <img [src]="srcE" alt="Destino en Europa" id="imagenEuropa">
                 <div class="overlay">
                     <div class="text">
-                        <p>Pais:</p> <input class="text__input" type="text" value="Grecia" readonly>
-                        <p>Idioma:</p><input class="text__input" type="text" value="Griego" readonly>
-                        <p>Lugar Imperdible:</p><input class="text__input" type="text" value="Oia" readonly>
-                        <p>Comida típica:</p><input class="text__input" type="text" value="Hummus de Fava" readonly>
-                        
+                        <p>Pais:</p> <input class="text__input" type="text" [value]="datosE[0]" readonly>
+                        <p>Idioma:</p><input class="text__input" type="text" [value]="datosE[1]" readonly>
+                        <p>Lugar Imperdible:</p><input class="text__input" type="text" [value]="datosE[2]" readonly>
+                        <p>Comida típica:</p><input class="text__input" type="text" [value]="datosE[3]" readonly>
                     </div>
                 </div>
             </div>
