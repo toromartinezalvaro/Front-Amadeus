@@ -1,4 +1,10 @@
 <main class="container__general">
+    <div class="datos" (click)="bloquear()">
+        <div class="datos__imagen">
+            <img src={{avatar}} width="100%">
+        </div>
+        <h1>{{nombre}}</h1>
+    </div>
     <div class="titulo">
         <h1 class="scale-in-ver-center">{{pregunta}}</h1>
     </div>
@@ -44,26 +50,43 @@
             </div>
         </div>
     </div>
+    <form class="radio">
+        <div>
+            <label>Opción 1 
+                <input type="radio" [value]="opcion1" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
+            </label>
+            
+        </div>
+        <div>
+            <label>Opción 2 
+                <input type="radio" [value]="opcion2" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
+            </label>
+            
+        </div>
+        <div>
+            <label>Opción 3
+                <input type="radio" [value]="opcion3" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()">
+            </label>
+            
+        </div>
+    </form>
 
     <div class="navegacion">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="./card1.html">1</a></li>
-                <li><a href="#" class="selected" active>2</a></li>
-                <li><a href="/page/card3.html">3</a></li>
-                <li><a href="">4</a></li>
-                <li><a href="">5</a></li>
-                <li><a href="">6</a></li>
-                <li><a href="">7</a></li>
-                <li><a href="">8</a></li>
-                <li><a href="">9</a></li>
-                <li><a href="">10</a></li>
-                <li><a href="">11</a></li>
+                <li routerLink="/perfil">Perfil</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
             </ul>
     </div>
 
-    <div class="botones">
-        <button type="button" (click)="atras()">Atrás</button>
-        <button type="button" (click)="siguiente()">Siguiente</button>
-    </div>
+    <form class="botones">
+        <button type="button" (click)="atras()" [disabled]="disAtras">Atrás</button>
+        <button type="button" (click)="siguiente()" [disabled]="disSig" [hidden]="hidSig">Siguiente</button>
+        <button type="button" [hidden]="calcular" routerLink="/resultados">Calcular Destino</button>
+    </form>
 </main>
+

@@ -23,14 +23,32 @@ body{
     flex-direction:column;
     flex-wrap: wrap;
     width: 90%; 
-    height: 85%; 
+    height: 100%; 
     background-color: #000835;
-    margin: 5%;
-    padding: 25px 5px;
+    margin: 1% 5%;
+    padding: 5px 5px;
     /* position: absolute; */
     /* top: 10%; */
     /* left: 20%; */
     /* transform: translate(-50%, -50%); */
+
+}
+
+.datos{
+    display: flex;
+    height: 5%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    background-color: #c5d5f9;
+}
+
+.datos__imagen{
+    height: 100%;
+}
+
+.datos__imagen img {
+    height: 40px;
 
 }
 
@@ -40,7 +58,7 @@ body{
     flex-wrap: wrap;
     text-align: center;
     font-size: 16px;
-    margin: 20px;
+    margin-bottom: 5px;
     color: #fff;
 }
 
@@ -153,7 +171,7 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 30px 10px 20px 10px;
+    margin: 30px 10px 10px 10px;
     height: 50px;
 }
 
@@ -171,7 +189,7 @@ body{
 
 }
 
-.navegacion ul li a{
+.navegacion ul li {
     display: flex;
     justify-content: space-evenly;
     padding: 15px 15px;
@@ -347,4 +365,10 @@ button:hover{
         padding: 15px 5px;
         margin: 2%;
     }
+}
+
+.radio{
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff;
 }

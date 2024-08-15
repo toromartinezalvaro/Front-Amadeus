@@ -7,7 +7,13 @@ export class DestinoService {
 
   constructor() { }
 
-  destinoA?:string;
-  destinoE?:string;
+  destinoA:String = "";
+  destinoE:String = "";
+  respuestasSer:String[] = [];
+  nombreS:String = "";
+  correoS:String = "";
+  avatar: String = "";
+  srcA: String = "";
+  srcE: String = "";
 
 }

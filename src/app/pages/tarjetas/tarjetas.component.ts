@@ -1,15 +1,33 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { DestinoService } from '../../servicios/destino.service';
 
 @Component({
   selector: 'app-tarjetas',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterOutlet, FormsModule, RouterLink],
   templateUrl: './tarjetas.component.html',
   styleUrl: './tarjetas.component.css'
 })
 export class TarjetasComponent {
 
+  constructor(public destinoService: DestinoService){}
+
   indice = 0;
+  opcSelect: String = '';
+
+  respuestas:String [] = [];
+
+  disSig = true;
+  disAtras = true;
+  hidSig = false;
+  calcular = true;
+
+  nombre = this.destinoService.nombreS;
+  avatar = this.destinoService.avatar;
 
   preguntaA = ["¿Que tipo de entorno prefieres para tus vacaciones?",
     "¿Que clima prefieres durante tus vacaciones?",
@@ -21,10 +39,10 @@ export class TarjetasComponent {
 
   opcionesA = [
     ["Playa","Montaña","Ciudad"],
-    ["Caluroso","Templado","Frio"],
+    ["Caluroso","Templado","Frío"],
     ["Deportes y Aventuras","Cultura y Museos","Relax y Bienestar"],
-    ["Hotel de Lujo","Hostal o Albergue","Airbnb o Apartamento"],
-    ["Menos de una semana","Una a dos semanas","Más de dos semanas"],
+    ["Hotel de Lujo","Hostal o Albergue","Airbnb"],
+    ["Menos de una semana","1-2 semanas","Más de dos semanas"],
     ["Menos de 30 años","30-50 años","Más de 50 años"]
   ]
 
@@ -73,14 +91,34 @@ export class TarjetasComponent {
   img3 = this.imgUrl[this.indice][2];
   dato1 = this.dato[this.indice][0];
   dato2 = this.dato[this.indice][1];
-  dato3 = this.dato[this.indice][2];
+  dato3 = this.dato[this.indice][2];  
 
+  verificarSeleccion(){
 
-  preferencias = [6];
+    if(this.opcSelect != ""){
+      this.disSig = false;
+    }
+    if(this.indice == 0){
+      this.disAtras = true;
+    }
+  }
 
 siguiente () {
 
+  if(this.indice == 5){
+
+    this.destinoService.respuestasSer.push(this.opcSelect);
+    console.log(this.destinoService.respuestasSer);
+    this.hidSig = true;
+    this.calcular = false;
+    return;
+
+  } else{
+    this.hidSig = false;
+  }
+
   this.indice++;
+
 
   this.pregunta = this.preguntaA[this.indice];
   this.opcion1 = this.opcionesA[this.indice][0];
@@ -93,9 +131,22 @@ siguiente () {
   this.dato2 = this.dato[this.indice][1];
   this.dato3 = this.dato[this.indice][2];
 
+  this.destinoService.respuestasSer.push(this.opcSelect);
+  console.log(this.destinoService.respuestasSer);
+
+  this.opcSelect="";
+  this.disSig = true;
+  this.disAtras = false;
+
 }
 
 atras() {
+
+  if(this.indice == 0){
+    this.destinoService.respuestasSer.pop();
+    this.disAtras = true;
+    return;
+  }
 
   this.indice--;
 
@@ -110,6 +161,19 @@ atras() {
   this.dato2 = this.dato[this.indice][1];
   this.dato3 = this.dato[this.indice][2];
 
+  this.destinoService.respuestasSer.pop();
+  console.log(this.destinoService.respuestasSer);
+
+  this.opcSelect="";
+  this.hidSig = false;
+  this.calcular = true;
+
 }
+
+public isclick: boolean = true;
+public bloquear() :void {
+  this.isclick = false;
+}
+
 
 }

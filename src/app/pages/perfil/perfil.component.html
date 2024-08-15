@@ -1,6 +1,6 @@
 <body class="container">
     <!--  -->
-    <main class="container__main">
+    <form class="container__main">
         <!-- Slideshow container -->
         <div class="container__main__card">
             <!--  -->
@@ -25,26 +25,24 @@
             
             <section class="container__main__card__select">
                 <!--  Previous button  -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
                 <!--  The dots/circles  -->
                 <div class="container__main__card__dot">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" (click)="currentSlide(1)"></span>
+                    <span class="dot" (click)="currentSlide(2)"></span>
+                    <span class="dot" (click)="currentSlide(3)"></span>
+                    <span class="dot" (click)="currentSlide(4)"></span>
                 </div> 
                 <!--  Next button  -->
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="next" (click)="plusSlides(1)">&#10095;</a>
             </section>
             
             <section class="container__main__card__data">
-                <input class="container__main__card__data--input" type="text" placeholder="Nombre y apellido">
-                <input class="container__main__card__data--input" type="email" placeholder="Correo electrónico">
-                <button class="container__main__card__data--button" type="button">Próxima aventura!</button>
+                <input class="container__main__card__data--input" type="text" placeholder="Nombre y apellido" [formControl]="nombre">
+                <input class="container__main__card__data--input" type="email" placeholder="Correo electrónico" [formControl]="correo">
+                <button class="container__main__card__data--button" type="button" (click)="datosUsuario()" routerLink="/tarjetas">¡Próxima aventura!</button>
                 <!-- <button class="buttonBG--dark " type="button">Próxima aventura</button> -->
             </section>
-            
         </div> 
-    </main>
-    <script src="../js/card1.js"></script>
+    </form>
 </body>

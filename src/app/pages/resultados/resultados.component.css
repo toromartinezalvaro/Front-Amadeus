@@ -84,8 +84,8 @@
 .conteiner{
     height: 80vh;
     width: 100%;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
     background-color: #000835;
     display: flex;
     flex-direction: column;
