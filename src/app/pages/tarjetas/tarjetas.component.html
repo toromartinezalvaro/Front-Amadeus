@@ -1,5 +1,5 @@
 <main class="container__general">
-    <div class="datos" (click)="bloquear()">
+    <div class="datos">
         <div class="datos__imagen">
             <img src={{avatar}} width="100%">
         </div>
@@ -10,77 +10,83 @@
     </div>
     
     <div class="container">
+        <label for="opc1">
+            <div class="card">
+                <div class="face front">
+                    <img [src]="img1" alt="imagen_playa">
+                    <h3>{{opcion1}}</h3>
+                </div>
 
-        <div class="card">
-            <div class="face front">
-                <img [src]="img1" alt="imagen_playa">
-                <h3>{{opcion1}}</h3>
+                <div class="face back">
+                    <h3>¿Sabias qué...</h3>
+                    <p>{{dato1}}
+                    </p>
+                </div>
             </div>
+        </label>
 
-            <div class="face back">
-                <h3>¿Sabias qué...</h3>
-                <p>{{dato1}}
-                </p>
+        <label for="opc2">
+            <div class="card">
+                <div class="face front">
+                    <img [src]="img2" alt="imagen_montaña">
+                    <h3>{{opcion2}}</h3>
+                </div>
+    
+                <div class="face back">
+                    <h3>¿Sabias qué...</h3>
+                    <p>{{dato2}}
+                    </p>
+                </div>
             </div>
-        </div>
+        </label>
 
-        <div class="card">
-            <div class="face front">
-                <img [src]="img2" alt="imagen_montaña">
-                <h3>{{opcion2}}</h3>
+        <label for="opc3">
+            <div class="card">
+                <div class="face front">
+                    <img [src]="img3"  alt="imagen_cuidad">
+                    <h3>{{opcion3}}</h3>
+                </div>
+            
+                <div class="face back">
+                    <h3>¿Sabias qué...</h3>
+                    <p>{{dato3}}
+                    </p>
+                </div>
             </div>
-
-            <div class="face back">
-                <h3>¿Sabias qué...</h3>
-                <p>{{dato2}}
-                </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="face front">
-                <img [src]="img3"  alt="imagen_cuidad">
-                <h3>{{opcion3}}</h3>
-            </div>
-        
-            <div class="face back">
-                <h3>¿Sabias qué...</h3>
-                <p>{{dato3}}
-                </p>
-            </div>
-        </div>
+        </label>
     </div>
     <form class="radio">
         <div>
-            <label>Opción 1 
-                <input type="radio" [value]="opcion1" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
+            
+            <label> 
+                <input id="opc1" type="radio" [value]="opcion1" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
             </label>
             
         </div>
         <div>
-            <label>Opción 2 
-                <input type="radio" [value]="opcion2" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
+            <label>
+                <input id="opc2" type="radio" [value]="opcion2" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()"> 
             </label>
             
         </div>
         <div>
-            <label>Opción 3
-                <input type="radio" [value]="opcion3" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()">
+            <label>
+                <input id="opc3" type="radio" [value]="opcion3" name="opciones" [(ngModel)]="opcSelect" (change)="verificarSeleccion()">
             </label>
             
         </div>
     </form>
 
     <div class="navegacion">
-            <ul>
-                <li routerLink="/perfil">Perfil</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-            </ul>
+        <ul>
+            <li class="perfil" routerLink="/perfil">Perfil</li>
+            <li class="{{t0}}">1</li>
+            <li class="{{t1}}">2</li>
+            <li class="{{t2}}">3</li>
+            <li class="{{t3}}">4</li>
+            <li class="{{t4}}">5</li>
+            <li class="{{t5}}">6</li>
+        </ul>
     </div>
 
     <form class="botones">

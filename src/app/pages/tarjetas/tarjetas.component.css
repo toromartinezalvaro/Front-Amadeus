@@ -169,8 +169,9 @@ body{
 
 .navegacion {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     margin: 30px 10px 10px 10px;
     height: 50px;
 }
@@ -183,13 +184,7 @@ body{
     gap: 10px;
 }
 
-.navegacion ul li{
-    border-radius: 10px;
-    width: auto;
-
-}
-
-.navegacion ul li {
+.contador {
     display: flex;
     justify-content: space-evenly;
     padding: 15px 15px;
@@ -197,18 +192,9 @@ body{
     text-decoration: none;
     background-color:#c5d5f9;
     border-radius: 10px;
-    position: relative;
-    
-    &:hover{ 
-            color: #c5d5f9;
-            background-color: #3a8bff;
-    }  
-
-    &[active] {
-        color: #c5d5f9;
-        background-color:#3a8bff;
-        
-    }
+    position: relative;  
+    border-radius: 10px;
+    width: auto;
     
     &::before{ 
         content: url(../../../assets/img/aeronave.png);
@@ -221,12 +207,37 @@ body{
 
         opacity: 0;
     }
-
-    &.selected::before{
-        opacity: 1;
-    } 
-    
 }
+
+.contadorOn { 
+    color: #c5d5f9;
+    background-color: #3a8bff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+.perfil { 
+    color: #c5d5f9;
+    background-color: #3a8bff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 15px;
+    text-decoration: none;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+.perfil:hover{
+    background-color:#c5d5f9;
+    color: #000835;
+    cursor: pointer;
+}
+
 
 .botones {
     display: flex;

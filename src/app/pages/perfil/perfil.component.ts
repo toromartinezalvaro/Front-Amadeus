@@ -73,5 +73,39 @@ export class PerfilComponent {
 
   }
 
+  estadoCorreo = "";
+  controlBoton = true;
+
+  verificarNomb(event: Event){
+
+    let nomUsuario = this.nombre.value;
+
+    if (nomUsuario == ""){
+      this.estadoCorreo = 'Escribe su nombre';
+    }
+  }
+
+  verificarCorreo(event: Event){
+
+    let correoUsuario = this.correo.value;
+
+    if (correoUsuario == ""){
+      this.estadoCorreo = 'Escribe un correo electrónico';
+    } else{
+      let regEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+      
+      if(regEmail.test(correoUsuario)){
+        
+        this.estadoCorreo = "";
+        this.controlBoton = false;
+        
+      } else{
+        this.estadoCorreo = "Escriba un Correo Valido"
+      }
+
+    }
+
+  }
+
 }
 

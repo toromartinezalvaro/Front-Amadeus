@@ -26,13 +26,21 @@ export class TarjetasComponent {
   hidSig = false;
   calcular = true;
 
+  t0 = "contador";
+  t1 = "contador";
+  t2 = "contador";
+  t3 = "contador";
+  t4 = "contador";
+  t5 = "contador";
+
+
   nombre = this.destinoService.nombreS;
   avatar = this.destinoService.avatar;
 
   preguntaA = ["¿Que tipo de entorno prefieres para tus vacaciones?",
-    "¿Que clima prefieres durante tus vacaciones?",
-    "¿Que tipo de actividades prefieres hacer durante tus vacaciones?",
-    "¿Que tipo de alojamiento prefieres?",
+    "¿Qué clima prefieres durante tus vacaciones?",
+    "¿Qué tipo de actividades prefieres hacer durante tus vacaciones?",
+    "¿Qué tipo de alojamiento prefieres?",
     "¿Cuánto tiemplo planeas quedarte de vacaciones?" ,
     "¿Cuál es tu rango de edad?"
   ];
@@ -68,7 +76,7 @@ export class TarjetasComponent {
       "Al visitar los museos, los viajeros pueden imaginar cómo era la vida en la corte real y apreciar la arquitectura y el diseño de una época pasada.",
       "Al visitar un baño termal, los viajeros pueden conectar con las tradiciones de culturas antiguas y experimentar una forma de relajación que ha sido practicada durante siglos."
     ],
-    ["Algunos de los hoteles más lujosos del mundo ofrecen experiencias tan exclusivas que incluyen la posibilidad de tener un mayordomo personal que se encargue de todos tus caprichos, desde preparar un baño relajante hasta reservar una mesa en el restaurante más exclusivo de la ciudad",
+    ["Algunos de los hoteles más lujosos del mundo ofrecen experiencias tan exclusivas que incluyen la posibilidad de tener un mayordomo que se encargue de todos tus caprichos, desde preparar un baño relajante hasta hacer reservas en el restaurante más exclusivo",
       "Muchos de los hostales y albergues más populares del mundo se encuentran ubicados en edificios históricos o con una arquitectura única",
       "Airbnb o apartamento:Airbnb nació de una necesidad de alojamiento económico durante un evento en San Francisco."
     ],
@@ -101,6 +109,27 @@ export class TarjetasComponent {
     if(this.indice == 0){
       this.disAtras = true;
     }
+
+    if(this.indice >= 0){
+      this.t0 = "contadorOn";
+    }
+
+    if(this.indice >= 1){
+      this.t1 = "contadorOn";
+    }
+    if(this.indice >= 2){
+      this.t2 = "contadorOn";
+    }
+    if(this.indice >= 3){
+      this.t3 = "contadorOn";
+    }
+    if(this.indice >= 4){
+      this.t4 = "contadorOn";
+    }
+    if(this.indice >= 5){
+      this.t5 = "contadorOn";
+    }
+
   }
 
 siguiente () {
@@ -138,6 +167,7 @@ siguiente () {
   this.disSig = true;
   this.disAtras = false;
 
+
 }
 
 atras() {
@@ -168,12 +198,39 @@ atras() {
   this.hidSig = false;
   this.calcular = true;
 
+  if(this.indice == 0){
+    this.t0 = "contador";
+    this.t1 = "contador";
+    this.t2 = "contador";
+    this.t3 = "contador";
+    this.t4 = "contador";
+    this.t5 = "contador";
+  }
+  if(this.indice == 1){
+    this.t1 = "contador";
+    this.t2 = "contador";
+    this.t3 = "contador";
+    this.t4 = "contador";
+    this.t5 = "contador";
+  }
+  if(this.indice == 2){
+    this.t2 = "contador";
+    this.t3 = "contador";
+    this.t4 = "contador";
+    this.t5 = "contador";
+  }
+  if(this.indice == 3){
+    this.t3 = "contador";
+    this.t4 = "contador";
+    this.t5 = "contador";
+  }
+  if(this.indice == 4){
+    this.t4 = "contador";
+    this.t5 = "contador";
+  }
+  if(this.indice == 5){
+    this.t5 = "contador";
+  }
 }
-
-public isclick: boolean = true;
-public bloquear() :void {
-  this.isclick = false;
-}
-
 
 }

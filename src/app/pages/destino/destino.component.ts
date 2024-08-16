@@ -61,7 +61,7 @@ export class DestinoComponent {
       this.srcA = "../../../assets/img/Cartagena.jpg"
       this.srcE = "../../../assets/img/Barcelona.jpg"
       this.datosA = ["Colombia","Español","Castillo San Felipe","Cazuela de Mariscos"];
-      this.datosE = ["España","Castellano/Catalán","Basílica de la Sagrada Familia","Pa amb tomàquet"];
+      this.datosE = ["España","Castellano/Catalán","Sagrada Familia","Pa amb tomàquet"];
 
     } else if (this.destinoService.destinoA == "San Juan"){
       this.america = this.destinoService.destinoA;
@@ -76,8 +76,8 @@ export class DestinoComponent {
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/RioDeJaneiro.jpg"
       this.srcE = "../../../assets/img/lisboa.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Brasil","Portugués","Cristo Redentor","Feijoada"];
+      this.datosE = ["Portugal","Portugués","Tranvía 28","Pasteles de Belem"];
 
     } else if (this.destinoService.destinoA == "Punta Cana"){
       this.america = this.destinoService.destinoA;

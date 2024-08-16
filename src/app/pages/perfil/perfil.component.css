@@ -186,6 +186,11 @@
     padding: 0.5rem 0.5rem;
     text-align: center;
 }
+
+.container__main__card__data--alert{
+    color: #fff;
+}
+
 .container__main__card__data--button {
     background-color: var(--colorButtonBG-dark);
     border: none;

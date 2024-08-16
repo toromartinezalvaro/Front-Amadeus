@@ -26,7 +26,7 @@
 }
 
 .conteiner__encabezado__imagen{
-  width: 30%;
+  width: 200px;
 }
 
 img {
@@ -109,9 +109,9 @@ h2{
   margin-top: 10px;
 }
 
-.opcion__link__item img{
+.opcion__link__item i{
   width: 30px;
-  background-color: #fff;
+  color: #fff;
 }
 
 .opcion__link__item .tooltiptext {

@@ -38,9 +38,10 @@
             </section>
             
             <section class="container__main__card__data">
-                <input class="container__main__card__data--input" type="text" placeholder="Nombre y apellido" [formControl]="nombre">
-                <input class="container__main__card__data--input" type="email" placeholder="Correo electrónico" [formControl]="correo">
-                <button class="container__main__card__data--button" type="button" (click)="datosUsuario()" routerLink="/tarjetas">¡Próxima aventura!</button>
+                <input class="container__main__card__data--input" type="text" placeholder="Nombre" [formControl]="nombre" (keyup)="verificarNomb($event)">
+                <input class="container__main__card__data--input" type="email" placeholder="Correo electrónico" [formControl]="correo" (keyup)="verificarCorreo($event)">
+                <label class="container__main__card__data--alert">{{estadoCorreo}}</label>
+                <button class="container__main__card__data--button" type="button" (click)="datosUsuario()" routerLink="/tarjetas" [disabled]="controlBoton">¡Próxima aventura!</button>
                 <!-- <button class="buttonBG--dark " type="button">Próxima aventura</button> -->
             </section>
         </div> 
