@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { DestinoService } from '../../servicios/destino.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tarjetas',
@@ -14,9 +15,10 @@ import { DestinoService } from '../../servicios/destino.service';
 })
 export class TarjetasComponent {
 
-  constructor(public destinoService: DestinoService){}
+  constructor(public destinoService: DestinoService, public router: Router){}
 
-  indice = 0;
+
+  indice = this.destinoService.indice;
   opcSelect: String = '';
 
   respuestas:String [] = [];
@@ -140,11 +142,15 @@ siguiente () {
     console.log(this.destinoService.respuestasSer);
     this.hidSig = true;
     this.calcular = false;
+    this.disAtras = false;
     return;
 
   } else{
     this.hidSig = false;
   }
+
+  this.destinoService.respuestasSer.push(this.opcSelect);
+  console.log(this.destinoService.respuestasSer);
 
   this.indice++;
 
@@ -160,8 +166,6 @@ siguiente () {
   this.dato2 = this.dato[this.indice][1];
   this.dato3 = this.dato[this.indice][2];
 
-  this.destinoService.respuestasSer.push(this.opcSelect);
-  console.log(this.destinoService.respuestasSer);
 
   this.opcSelect="";
   this.disSig = true;
@@ -176,7 +180,15 @@ atras() {
     this.destinoService.respuestasSer.pop();
     this.disAtras = true;
     return;
+    
   }
+
+  if(this.indice == 5){
+    this.destinoService.respuestasSer.pop();
+  }
+
+  this.destinoService.respuestasSer.pop();
+  console.log(this.destinoService.respuestasSer);
 
   this.indice--;
 
@@ -190,9 +202,6 @@ atras() {
   this.dato1 = this.dato[this.indice][0];
   this.dato2 = this.dato[this.indice][1];
   this.dato3 = this.dato[this.indice][2];
-
-  this.destinoService.respuestasSer.pop();
-  console.log(this.destinoService.respuestasSer);
 
   this.opcSelect="";
   this.hidSig = false;
@@ -230,6 +239,29 @@ atras() {
   }
   if(this.indice == 5){
     this.t5 = "contador";
+  }
+}
+
+ruta = "";
+
+regresarPerfil(){
+
+  let confirmar = confirm("¿Desea crear un nuevo perfir y restablecer las opciones seleccionadas?")
+
+  if(confirmar == false){
+    return;
+  } else {
+
+    this.destinoService.indice = 0;
+  let longitud = this.destinoService.respuestasSer.length;
+
+  for(let i = 0; i <= longitud; i++){
+    this.destinoService.respuestasSer.pop();
+
+  }
+
+    this.ruta = "/perfil";
+    this.router.navigate([this.ruta]);
   }
 }
 

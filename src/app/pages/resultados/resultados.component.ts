@@ -27,6 +27,11 @@ export class ResultadosComponent {
   // pDescanso = "1-2 días act.intensas";
   edad = this.destinoService.respuestasSer[5];
 
+  volverAtras(){
+    this.destinoService.indice = 5;
+    this.destinoService.respuestasSer.pop();
+  }
+
 
   enviarDestino(){
 
@@ -45,7 +50,7 @@ export class ResultadosComponent {
                 } else if(this.edad == "Menos de 30 años" && this.pActividad == "Relax y Bienestar" && this.pAlojamiento == "Hotel de Lujo"){
                   
                   this.destinoService.destinoA = "Playa del Carmen";
-                  this.destinoService.destinoE = "Santoriniiza";
+                  this.destinoService.destinoE = "Santori";
 
                 } else if(this.edad == "30-50 años" && this.pActividad == "Cultura y Museos" && this.pAlojamiento == "Hotel de Lujo"){
                   

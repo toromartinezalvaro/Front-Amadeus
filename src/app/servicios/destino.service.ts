@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 export class DestinoService {
 
   constructor() { }
-
+  
+  indice:number = 0;
   destinoA:String = "";
   destinoE:String = "";
   respuestasSer:String[] = [];

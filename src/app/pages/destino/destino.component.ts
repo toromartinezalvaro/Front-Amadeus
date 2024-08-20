@@ -92,96 +92,96 @@ export class DestinoComponent {
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/ushuaia.jpg"
       this.srcE = "../../../assets/img/reykjavik.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Argentina","Español","Montes Martial","Cazuela de Centolla"];
+      this.datosE = ["Islandia","Islandés","Hallgrimskirkja","Sopa de Cordero"];
 
     } else if (this.destinoService.destinoA == "Aspen"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/Aspen.jpg"
       this.srcE = "../../../assets/img/innsbruck.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["EE.UU","Ingles","Aspen Mountain","Parrilla"];
+      this.datosE = ["Austria","Alemán","Hofkkirche","Wiener Schnitzel"];
 
     } else if (this.destinoService.destinoA == "Bariloche"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/Bariloche.jpg"
       this.srcE = "../../../assets/img/interlaken.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Argentina","Español","Nahuel Huapi","Curanto"];
+      this.datosE = ["Suiza","Alemán","Höhematte Park","Raclette"];
 
     } else if (this.destinoService.destinoA == "Banff"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/banff.jpg"
       this.srcE = "../../../assets/img/zermatt.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Canadá","Inglés","Upper Hot Springs","Poutine"];
+      this.datosE = ["Suiza","Griego","Ferrocarril de Gornergrat","Raclette"];
 
     } else if (this.destinoService.destinoA == "Cusco"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/cusco.jpg"
       this.srcE = "../../../assets/img/Granada.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Perú","Español","Saqsaywaman","Chiri Uchu"];
+      this.datosE = ["España","Español","Alhambra","Pionono"];
 
     } else if (this.destinoService.destinoA == "Machu Picchu"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/MachuPicchu.jpg"
       this.srcE = "../../../assets/img/Chamonix.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Perú","Español","Huayna Picchu","Cuy al horno"];
+      this.datosE = ["Francia","Francés","Mont Blanc","La tartiflette"];
 
     } else if (this.destinoService.destinoA == "Los Angeles"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/LosAngeles.jpg"
       this.srcE = "../../../assets/img/roma.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["EE.UU","Inglés","Parque Griffith","Hickory Burger"];
+      this.datosE = ["Italia","Italiano","Palacio Barberini","Gnocchi"];
 
     } else if (this.destinoService.destinoA == "Toronto"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/toronto.jpg"
       this.srcE = "../../../assets/img/berlin.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Canadá","Francés/Inglés","Torre CN","Poutine"];
+      this.datosE = ["Alemania","Alemania","Puesta de Brandeburgo","Eisbein"];
 
     } else if (this.destinoService.destinoA == "Ciudad de México"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/ciudadMexico.jpg"
       this.srcE = "../../../assets/img/madrid.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["México","Español","Coyoacán","Chilaquiles"];
+      this.datosE = ["España","Castellano","Palacio Real","Cocido Madrileño"];
 
     } else if (this.destinoService.destinoA == "Nueva York"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/NuevaYork.jpg"
       this.srcE = "../../../assets/img/paris.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["EE.UU","Inglés","Central Park","Pizza"];
+      this.datosE = ["Francia","Frances","Torre Eiffel","Foie gra"];
 
     } else if (this.destinoService.destinoA == "Miami"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/miami.jpg"
       this.srcE = "../../../assets/img/viena.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["EE.UU","Inglés","Miami Beach","Pargo Frito Y Griot"];
+      this.datosE = ["Austria","Alemán","Palacio de Schönbrunn","Wiener Schnitzel"];
 
     } else if (this.destinoService.destinoA == "Chicago"){
       this.america = this.destinoService.destinoA;
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/chicago.jpg"
       this.srcE = "../../../assets/img/londres.jpg"
-      this.datosA = ["México","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Grecia","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["EE.UU","Inglés","Cloud Gate","Deep-dish Pizza"];
+      this.datosE = ["Reino Unido","Inglés","Abadía Westminster","Fish & Chips"];
 
     } else if (this.destinoService.destinoA == "Bora Bora"){
 
@@ -191,8 +191,8 @@ export class DestinoComponent {
       this.europa = this.destinoService.destinoE;
       this.srcA = "../../../assets/img/BoraBora.jpg"
       this.srcE = "../../../assets/img/dubai.jpg"
-      this.datosA = ["Polinesia Francesa","Español","Chichén-Itzá","Salbutes"];
-      this.datosE = ["Emiratos Árabes","Griego","Oia","Hummus de Fava"];
+      this.datosA = ["Polinesia Francesa","Francés","Otemanu","Roulottes"];
+      this.datosE = ["Emiratos Árabes","Árabe","Burj Al Arab","El Mezze"];
     }
 
     this.destinoService.srcA = this.srcA;
