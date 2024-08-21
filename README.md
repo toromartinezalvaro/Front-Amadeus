@@ -1,7 +1,7 @@
 # Amadeus
 
 ## Descripción
-Amadeus es un proyecto Angular diseñado para [describir brevemente el propósito del proyecto]. Este proyecto incluye [mencionar características clave o funcionalidades].
+Amadeus es un proyecto Angular diseñado para [describir el viaje de tus sueños.
 
 ## Instalación
 Para instalar y configurar el proyecto localmente, sigue estos pasos:
