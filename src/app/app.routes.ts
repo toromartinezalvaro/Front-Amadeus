@@ -7,6 +7,7 @@ import { PlanesComponent } from './pages/planes/planes.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
 import { Component } from '@angular/core';
+import { ReportsComponent } from './pages/reports/reports.component';
 
 export const routes: Routes = [
     {path:'', component:IndexComponent},
@@ -16,5 +17,6 @@ export const routes: Routes = [
     {path:'planes', component:PlanesComponent},
     {path:'resultados', component:ResultadosComponent},
     {path:'tarjetas', component:TarjetasComponent},
-    {path:'planes', component:PlanesComponent}
+    {path:'planes', component:PlanesComponent},
+    {path:'reports', component: ReportsComponent}
 ];
