@@ -85,27 +85,30 @@ export class PerfilComponent {
     }
   }
 
-  verificarCorreo(event: Event){
+  
+  verificarCorreo(event: Event): void {
+    
+    const regEmail = /^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\.,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,})$/i;
+    const correoUsuario = this.correo.value;
+    
+    const checkbox = document.getElementById('data-accepted') as HTMLInputElement;
 
-    let correoUsuario = this.correo.value;
-
-    if (correoUsuario == ""){
-      this.estadoCorreo = 'Escribe un correo electrónico';
-    } else{
-      let regEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-      
-      if(regEmail.test(correoUsuario)){
-        
-        this.estadoCorreo = "";
-        this.controlBoton = false;
-        
-      } else{
-        this.estadoCorreo = "Escriba un Correo Valido"
+    if (!regEmail.test(correoUsuario) || !checkbox.checked) {
+      if (!regEmail.test(correoUsuario)) {
+        this.estadoCorreo = 'Correo no válido';
+      } else if (!checkbox.checked) {
+        this.estadoCorreo = 'Debe aceptar los términos y condiciones';
       }
-
+      this.controlBoton = true;
+    } else {
+      this.estadoCorreo = '';
+      this.controlBoton = false;
     }
 
+    // Ensure the checkbox value is updated correctly
+    checkbox.addEventListener('change', () => {
+      this.verificarCorreo(event);
+    });
   }
 
 }
-

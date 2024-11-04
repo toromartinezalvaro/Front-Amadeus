@@ -187,6 +187,20 @@
     text-align: center;
 }
 
+.container__main__card__data--personalData{
+    display: inline;
+}
+
+.container__main__card__data--checkbox{
+
+    color: var(--colorBand-white);
+     & a{
+        color: var(--colorBand-white);
+        font-weight: bold;
+    }
+}
+
+
 .container__main__card__data--alert{
     color: #fff;
 }
