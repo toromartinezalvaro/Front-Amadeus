@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DestinoService } from '../../servicios/destino.service';
+import { DestinoService } from '@services/destino.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
