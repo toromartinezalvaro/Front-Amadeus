@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import path from 'node:path';
 import { IndexComponent } from './pages/index/index.component';
 import { DestinoComponent } from './pages/destino/destino.component';
@@ -10,7 +11,6 @@ import { Component } from '@angular/core';
 import { ReportsComponent } from './pages/reports/reports.component';
 
 export const routes: Routes = [
-    {path:'', component:IndexComponent},
     {path:'index', component:IndexComponent},
     {path:'destino', component:DestinoComponent},
     {path:'perfil', component:PerfilComponent},
@@ -19,4 +19,9 @@ export const routes: Routes = [
     {path:'tarjetas', component:TarjetasComponent},
     {path:'planes', component:PlanesComponent},
     {path:'reports', component: ReportsComponent}
+    {
+        path: '',
+        redirectTo: 'index',
+        pathMatch: 'full'
+    }
 ];

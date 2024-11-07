@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { DestinoService } from '../../servicios/destino.service';
+import { DestinoService } from '@services/destino.service';
 import { Router } from '@angular/router';
+import { UsuarioComponent } from '../usuario/usuario.component';
 
 @Component({
   selector: 'app-tarjetas',
@@ -140,9 +141,11 @@ siguiente () {
 
     this.destinoService.respuestasSer.push(this.opcSelect);
     console.log(this.destinoService.respuestasSer);
+    
     this.hidSig = true;
     this.calcular = false;
     this.disAtras = false;
+    this.opcSelect="";
     return;
 
   } else{
@@ -151,7 +154,6 @@ siguiente () {
 
   this.destinoService.respuestasSer.push(this.opcSelect);
   console.log(this.destinoService.respuestasSer);
-
   this.indice++;
 
 
@@ -171,7 +173,7 @@ siguiente () {
   this.disSig = true;
   this.disAtras = false;
 
-
+  console.log(this.indice);
 }
 
 atras() {
@@ -179,11 +181,17 @@ atras() {
   if(this.indice == 0){
     this.destinoService.respuestasSer.pop();
     this.disAtras = true;
+    this.opcSelect="";
     return;
     
   }
 
   if(this.indice == 5){
+    this.disSig = true;
+  }
+
+  //validación si el array está completo y se quiere volver a la pregunta anterior, se eliminan dos respuestas 
+  if(this.destinoService.respuestasSer.length == 6){
     this.destinoService.respuestasSer.pop();
   }
 
