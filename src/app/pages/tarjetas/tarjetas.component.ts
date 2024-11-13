@@ -10,7 +10,7 @@ import { UsuarioComponent } from '../usuario/usuario.component';
 @Component({
   selector: 'app-tarjetas',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, RouterOutlet, FormsModule, RouterLink],
   templateUrl: './tarjetas.component.html',
   styleUrl: './tarjetas.component.css'
 })

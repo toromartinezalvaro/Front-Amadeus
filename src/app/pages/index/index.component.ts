@@ -10,8 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class IndexComponent {
 
-  ngOnInit(): void {
-    sessionStorage.clear();
-    sessionStorage.setItem("avatar", "https://cdn-icons-png.flaticon.com/512/9187/9187532.png");
-  }
+  
 }

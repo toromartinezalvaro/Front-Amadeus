@@ -33,15 +33,9 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   }
 
   obtenerDatosUsuario(){
-    //Datos de usuario guardados en sessionStorage se asignan a las variables del componente usuario
-    this.nombre = window.sessionStorage.getItem('nombre');
-    this.correo = window.sessionStorage.getItem('email');
-
-    //Si no hay seleccionado un avatar, se le asigna uno por defecto
-    if (window.sessionStorage.getItem('avatar') != null)
-      this.avatar = window.sessionStorage.getItem('avatar');
-    if(this.router.url == "/index")
-      this.avatar = "https://cdn-icons-png.flaticon.com/512/9187/9187532.png";
+    this.avatar = this.destinoService.avatar;
+    this.nombre = this.destinoService.nombreS;
+    this.correo = this.destinoService.correoS;
   }
 
   handleVisible(){
@@ -49,17 +43,9 @@ export class UsuarioComponent implements OnInit, OnDestroy {
   }
 
   cerrarSesion(){
-    //Al cerrar sesión se eliminan las selecciones del array de respuestas
-    this.destinoService.indice = 0;
-    let longitud = this.destinoService.respuestasSer.length;
-
-    for(let i = 0; i <= longitud; i++){
-      this.destinoService.respuestasSer.pop();
-
-    }
-    //Al cerrar sesión se eliminan los datos de usuario guardados en sessionStorage
-    window.sessionStorage.clear();
-    window.sessionStorage.setItem("avatar", "https://cdn-icons-png.flaticon.com/512/9187/9187532.png");
+    this.destinoService.avatar = "https://cdn-icons-png.flaticon.com/512/9187/9187532.png";
+    this.destinoService.nombreS = "";
+    this.destinoService.correoS = "";
     this.router.navigate(["/index"])
   }
 

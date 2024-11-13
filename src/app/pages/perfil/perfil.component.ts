@@ -5,7 +5,7 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { DestinoService } from '@services/destino.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
@@ -35,7 +35,7 @@ export class PerfilComponent implements AfterViewInit {
   @ViewChildren('slidesElements') slidesElements!: QueryList<ElementRef>;
   @ViewChildren('dotElement') dotElemets!: QueryList<ElementRef>;
 
-  constructor(public destinoService: DestinoService, public router: Router) {}
+  constructor(public destinoService: DestinoService) {}
 
   slideIndex: number = 1;
 
@@ -85,48 +85,31 @@ export class PerfilComponent implements AfterViewInit {
   nombre = new FormControl();
   correo = new FormControl(); 
 
-//Creación de objeto para enviar datos de usuario
-async datosUsuario(){
-    
-  let objUsuario = {
-    name: this.nombre.value,
-    email: this.correo.value,
-  }
-  //Se llama al método POST del servicio para enviar los datos del usuario
-  await this.destinoService
-      .sendDestinity('/v1/user', objUsuario)
-      .then((response) => {
-                //Se almacenan los datos del usuario en el sessionStorage
-                window.sessionStorage.setItem("nombre", response.name);
-                window.sessionStorage.setItem("email",response.email);
-                window.sessionStorage.setItem("id", response.id);
-              });
-  
-  let numeroAvatar = AvatarImages.AVATAR1;
-  switch(this.slideIndex){
-    case 1: {
-      numeroAvatar = AvatarImages.AVATAR1;
-      break;
-    }
-    case 2: {
-      numeroAvatar = AvatarImages.AVATAR2;
-      break;
-    }
-    case 3: {
-      numeroAvatar = AvatarImages.AVATAR3;
-      break;
-    }
-    case 4: {
-      numeroAvatar = AvatarImages.AVATAR4;
-      break;
-    }
-  }
-  //Se almacena la ruta de imagen de avatar seleccionada en el sessionStorage
-  window.sessionStorage.setItem("avatar", numeroAvatar)
+  datosUsuario(){
 
-  //Se redirige a la página de tarjetas despues de actualziar info de usuario
-  this.router.navigate(["/tarjetas"])
-}
+    this.destinoService.nombreS = this.nombre.value;
+    this.destinoService.correoS = this.correo.value;
+    
+    switch(this.slideIndex){
+      case 1: {
+        this.destinoService.avatar = AvatarImages.AVATAR1;
+        break;
+      }
+      case 2: {
+        this.destinoService.avatar = AvatarImages.AVATAR2;
+        break;
+      }
+      case 3: {
+        this.destinoService.avatar = AvatarImages.AVATAR3;
+        break;
+      }
+      case 4: {
+        this.destinoService.avatar = AvatarImages.AVATAR4;
+        break;
+      }
+    }
+
+  }
 
   estadoCorreo = "";
   controlBoton = true;
