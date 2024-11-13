@@ -31,19 +31,24 @@ export class ResultadosComponent {
     this.destinoService.respuestasSer.pop();
   }
 
-  enviarDestino() {
+  //Se llama al método POST para enviar las respuestas seleccionadas por el usuario
+  async enviarDestino() {
     // Llama al método `sendDestinity` del servicio `DestinoService`, enviando un objeto con las respuestas seleccionadas
-    this.destinoService
-      .sendDestinity('enviarDestino', {
+    await this.destinoService
+      .sendDestinity('/v1/enviarDestino', {
         // Parámetros que se envían en el cuerpo de la solicitud POST
-        pDestino: this.destinoService.respuestasSer[0],
-        pClimatica: this.destinoService.respuestasSer[1],
-        pActividad: this.destinoService.respuestasSer[2],
-        pAlojamiento: this.destinoService.respuestasSer[3],
-        dViaje: this.destinoService.respuestasSer[4],
+        destino: this.destinoService.respuestasSer[0],
+        climatica: this.destinoService.respuestasSer[1],
+        actividad: this.destinoService.respuestasSer[2],
+        alojamiento: this.destinoService.respuestasSer[3],
+        viaje: this.destinoService.respuestasSer[4],
         edad: this.destinoService.respuestasSer[5],
+        //El id del usuario se obtiene del sessionStorage
+        userId: sessionStorage.getItem("id")
+
       })
       .then((response) => {
+        //Se almacenan los destinos en el servicio y en el sessionStorage
         this.destinoService.destinoA = response.destinoA;
         this.destinoService.destinoE = response.destinoE;
         sessionStorage.setItem('destinoAmerica', response.destinoA);
