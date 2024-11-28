@@ -1,0 +1,20 @@
+export enum PreferenciasLabels {
+  PLAYA = 'Playa',
+  MONTANA = 'Montaña',
+  CIUDAD = 'Ciudad',
+  CALUROSO = 'Caluroso',
+  TEMPLADO = 'Templado',
+  FRIO = 'Frío',
+  DEPORTES_Y_AVENTURAS = 'Deportes y Aventuras',
+  CULTURA_Y_MUSEOS = 'Cultura y Museos',
+  RELAX_Y_BIENESTAR = 'Relax y Bienestar',
+  HOTEL_LUJO = 'Hotel de lujo',
+  HOSTAL_ALBERGUE = 'Hostal o Albergue',
+  AIRBNB = 'Airbnb',
+  MENOR_UNA_SEMANA = 'Menos de una semana',
+  UNA_Y_DOS_SEMANAS = '1-2 Semanas',
+  MAYOR_DOS_SEMANAS = 'Más de dos semanas',
+  MENOR_QUE_TREINTA = 'Menos de 30 años',
+  TREINTA_Y_CINCUENTA = '30 - 50 años',
+  MAYOR_QUE_CINCUENTA = 'Más de 50 años'
+}

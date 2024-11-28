@@ -49,6 +49,7 @@
     justify-content: center;
     text-align: center;
     color: #ffffff;
+    width: 100%;
 }
 
 .focus-in-expand {
@@ -58,6 +59,7 @@
 
 .opcion__encabezado__destino{
     font-weight: bolder;
+    width: 100%;
 }
 
 .conteiner--opciones{
@@ -108,10 +110,12 @@
 
 .opcion__destino{
   height: 10%;
+  width: 90%;
 }
 
 .opcion__imagen{
     height: 60%;
+    width: 90%;
     margin-left: 10%;
     margin-right: 10%;
     position: relative;
@@ -201,4 +205,3 @@ input{
     background-color: #000835;
     font-size: 15px;
 }
-

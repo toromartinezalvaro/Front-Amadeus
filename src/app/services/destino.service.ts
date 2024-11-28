@@ -9,7 +9,7 @@ export class DestinoService {
 
   constructor() {
     this.axiosClient = axios.create({
-      baseURL: 'http://localhost:8080/api/', // URL base para las solicitudes
+      baseURL: 'http://localhost:8084/api/v1/', // URL base para las solicitudes
       // timeout: 5000,
     });
   }
@@ -68,6 +68,7 @@ export class DestinoService {
     }
   }
 
+  destinos: any[] = [];
   indice: number = 0;
   destinoA: String = '';
   destinoE: String = '';
