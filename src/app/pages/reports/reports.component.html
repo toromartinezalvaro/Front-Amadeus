@@ -1,4 +1,22 @@
-<div *ngIf="reportData">
-  <pre>{{ reportData | json }}</pre>
+<div class="flex h-screen no-scrollbar">
+  <div class="w-1/4 h-screen bg-gray-800 text-white pl-6 pt-10">
+    <h2 class="text-2xl font-bold mb-4">REPORTES</h2>
+    <ul>
+      <li class="mb-2 border-b border-gray-600">
+        <a href="javascript:void(0)" (click)="selectMenu('destinos')" class="hover:text-gray-400 cursor-pointer text-lg py-4 block">Destinos</a>
+      </li>
+      <li class="mb-2 border-b border-gray-600">
+        <a href="javascript:void(0)" (click)="selectMenu('usuarios')" class="hover:text-gray-400 cursor-pointer text-lg py-4 block">Usuarios</a>
+      </li>
+      <li class="mb-2 border-b border-gray-600">
+        <a href="javascript:void(0)" (click)="selectMenu('preferencias')" class="hover:text-gray-400 cursor-pointer text-lg py-4 block">Preferencias</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="w-3/4 p-4 bg-gray-100 overflow-auto no-scrollbar ">
+    <app-destinos *ngIf="selectedMenu === 'destinos'"></app-destinos>
+    <app-usuarios *ngIf="selectedMenu === 'usuarios'"></app-usuarios>
+    <app-preferencias *ngIf="selectedMenu === 'preferencias'"></app-preferencias>
+  </div>
 </div>
-<button (click)="loadReportData()">Actualizar Reporte</button>

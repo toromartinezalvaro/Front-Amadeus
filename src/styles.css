@@ -6,6 +6,11 @@
 
 }
 
+body{
+    height: 92vh;
+    width: 100vw;
+}
+
 :root {
     /*  -  */
     --color01: #ffffff;

@@ -1,30 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { ReportsService } from '../../servicios/reports/reports.service';
 import { CommonModule } from '@angular/common';
+import { DestinosComponent } from './reportsComponents/destinos/destinos.component';
+import { UsuariosComponent } from './reportsComponents/usuarios/usuarios.component';
+import { PreferenciasComponent } from './reportsComponents/preferencias/preferencias.component';
 
 @Component({
   selector: 'app-reports',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DestinosComponent, UsuariosComponent, PreferenciasComponent],
   templateUrl: './reports.component.html',
-  styleUrl: './reports.component.css'
+  styleUrls: ['./reports.component.css']
 })
-export class ReportsComponent implements OnInit{
-  reportData: any;
+export class ReportsComponent implements OnInit {
+  selectedMenu: string = 'destinos';
 
-  constructor(private reportsService: ReportsService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.loadReportData();
+  ngOnInit(): void {}
+
+  selectMenu(menu: string): void {
+    this.selectedMenu = menu;
   }
-
-  async loadReportData(): Promise<void> {
-    try {
-      const params = {}; 
-      this.reportData = await this.reportsService.getReportData(params);
-    } catch (error) {
-      console.error('Error al cargar los datos del reporte:', error);
-    }
-  }
-
 }

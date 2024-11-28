@@ -1,0 +1,17 @@
+<div *ngIf="reportData.length > 0" class="p-4 bg-gray-100 rounded-lg shadow-md">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div *ngFor="let report of reportData" class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+      <img class="w-full" [src]="report.img_url" alt="{{ report.nombre }}">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{ report.nombre }}</div>
+        <p class="text-gray-700 text-base">
+          <strong>País:</strong> {{ report.pais }}<br>
+          <strong>Idioma:</strong> {{ report.idioma }}<br>
+          <strong>Lugar Imperdible:</strong> {{ report.lugar_imperdible }}<br>
+          <strong>Comida Típica:</strong> {{ report.comida_tipica }}<br>
+          <strong>Continente:</strong> {{ report.nombre_continente }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

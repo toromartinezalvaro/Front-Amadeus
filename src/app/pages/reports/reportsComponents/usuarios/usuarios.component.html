@@ -1,0 +1,31 @@
+<div *ngIf="usuariosData.length > 0" class="bg-gray-100 rounded-lg shadow-md overflow-auto max-h-screen no-scrollbar">
+  <table class="min-w-full bg-white text-center">
+    <thead class="sticky m-0 top-0 h-16 bg-white">
+      <tr class="bg-gray-800 text-white">
+        <th class="py-2 px-4 border-b w-1/4">Nombre</th>
+        <th class="py-2 px-4 border-b w-1/4">Email</th>
+        <th class="py-2 px-4 border-b w-1/2">Destinos Recomendados</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuariosData">
+        <td class="py-2 px-4 border-b h-20 w-1/4">{{ usuario.nombre }}</td>
+        <td class="py-2 px-4 border-b h-20 w-1/4">{{ usuario.email }}</td>
+        <td class="py-2 px-4 border-b h-20 w-1/2">
+          <div *ngIf="!visibilidadPreferencias[usuario.email]">
+            <button (click)="loadPreferenciasUsuario(usuario.email)" class="bg-blue-500 text-white px-4 py-2 rounded">
+              Ver Destinos
+            </button>
+          </div>
+          <div *ngIf="visibilidadPreferencias[usuario.email]" class="overflow-auto max-h-16">
+            <ul>
+              <li *ngFor="let destino of preferenciasUsuario[usuario.email]" (click)="loadPreferenciasUsuario(usuario.email)" class="cursor-pointer">
+                {{ destino.nombre }} ({{ destino.nombre_continente }})
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

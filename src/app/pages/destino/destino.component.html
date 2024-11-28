@@ -11,13 +11,13 @@
     <section class="opciones--opcion">
       <div class="opcion__encabezado">
         <h2 class="opcion__encabezado__nombre" (click)="destino()">
-          Aventura en América
+          Aventura en {{destino1?.nombre_continente}}
         </h2>
       </div>
 
       <div class="opcion__destino">
         <input
-          [value]="america[0]?.nombreDestino"
+          [value]="destino1?.nombre"
           class="opcion__encabezado__destino focus-in-expand"
           type="text"
           readonly
@@ -27,7 +27,7 @@
 
       <div class="opcion__imagen">
         <img
-          [src]="america[0]?.img"
+          [src]="destino1?.img_url"
           alt="Destino en America"
           id="imagenAmerica"
         />
@@ -37,28 +37,28 @@
             <input
               class="text__input"
               type="text"
-              [value]="america[0]?.pais"
+              [value]="destino1?.nombre"
               readonly
             />
             <p>Idioma:</p>
             <input
               class="text__input"
               type="text"
-              [value]="america[0]?.idioma"
+              [value]="destino1?.idioma"
               readonly
             />
             <p>Lugar Imperdible:</p>
             <input
               class="text__input"
               type="text"
-              [value]="america[0]?.lugarImperdible"
+              [value]="destino1?.lugar_imperdible"
               readonly
             />
             <p>Comida típica:</p>
             <input
               class="text__input"
               type="text"
-              [value]="america[0]?.comidaTipica"
+              [value]="destino1?.comida_tipica"
               readonly
             />
           </div>
@@ -76,19 +76,13 @@
     <section class="opciones--opcion">
       <div class="opcion__encabezado">
         <h2 class="opcion__encabezado__nombre">
-          Aventura en
-          <ng-container
-            *ngIf="europa[0]?.continente === 'Europa'; else showAsia"
-          >
-            Europa
-          </ng-container>
-          <ng-template #showAsia> Asia </ng-template>
+          Aventura en {{destino2?.nombre_continente}}
         </h2>
       </div>
 
       <div class="opcion__destino">
         <input
-          [value]="europa[0]?.nombreDestino"
+          [value]="destino2?.nombre"
           class="opcion__encabezado__destino focus-in-expand"
           type="text"
           readonly
@@ -97,35 +91,35 @@
       </div>
 
       <div class="opcion__imagen">
-        <img [src]="europa[0]?.img" alt="Destino en Europa" id="imagenEuropa" />
+        <img [src]="destino2?.img_url" alt="Destino en Europa" id="imagenEuropa" />
         <div class="overlay">
           <div class="text">
             <p>Pais:</p>
             <input
               class="text__input"
               type="text"
-              [value]="europa[0]?.pais"
+              [value]="destino2?.nombre"
               readonly
             />
             <p>Idioma:</p>
             <input
               class="text__input"
               type="text"
-              [value]="europa[0]?.idioma"
+              [value]="destino2?.idioma"
               readonly
             />
             <p>Lugar Imperdible:</p>
             <input
               class="text__input"
               type="text"
-              [value]="europa[0]?.lugarImperdible"
+              [value]="destino2?.lugar_imperdible"
               readonly
             />
             <p>Comida típica:</p>
             <input
               class="text__input"
               type="text"
-              [value]="europa[0]?.comidaTipica"
+              [value]="destino2.comida_tipica"
               readonly
             />
           </div>

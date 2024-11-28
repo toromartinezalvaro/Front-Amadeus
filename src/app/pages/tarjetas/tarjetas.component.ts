@@ -6,6 +6,7 @@ import { RouterLink } from '@angular/router';
 import { DestinoService } from '@services/destino.service';
 import { Router } from '@angular/router';
 import { UsuarioComponent } from '../usuario/usuario.component';
+import { PreferenciasLabels } from 'src/app/shared/enums/preferencias-labels.enum';
 
 @Component({
   selector: 'app-tarjetas',
@@ -18,11 +19,10 @@ export class TarjetasComponent {
 
   constructor(public destinoService: DestinoService, public router: Router){}
 
-
   indice = this.destinoService.indice;
   opcSelect: String = '';
 
-  respuestas:String [] = [];
+  respuestas: String[] = [];
 
   disSig = true;
   disAtras = true;
@@ -36,7 +36,6 @@ export class TarjetasComponent {
   t4 = "contador";
   t5 = "contador";
 
-
   nombre = this.destinoService.nombreS;
   avatar = this.destinoService.avatar;
 
@@ -49,12 +48,12 @@ export class TarjetasComponent {
   ];
 
   opcionesA = [
-    ["Playa","Montaña","Ciudad"],
-    ["Caluroso","Templado","Frío"],
-    ["Deportes y Aventuras","Cultura y Museos","Relax y Bienestar"],
-    ["Hotel de Lujo","Hostal o Albergue","Airbnb"],
-    ["Menos de una semana","1-2 semanas","Más de dos semanas"],
-    ["Menos de 30 años","30-50 años","Más de 50 años"]
+    ["PLAYA","MONTANA","CIUDAD"],
+    ["CALUROSO","TEMPLADO","FRIO"],
+    ["DEPORTES_Y_AVENTURAS","CULTURA_Y_MUSEOS","RELAX_Y_BIENESTAR"],
+    ["HOTEL_LUJO","HOSTAL_ALBERGUE","AIRBNB"],
+    ["MENOR_UNA_SEMANA","UNA_Y_DOS_SEMANAS","MAYOR_DOS_SEMANAS"],
+    ["MENOR_QUE_TREINTA","TREINTA_Y_CINCUENTA","MAYOR_QUE_CINCUENTA"]
   ]
 
   imgUrl =[
@@ -94,9 +93,9 @@ export class TarjetasComponent {
   ]
 
   pregunta = this.preguntaA[this.indice];
-  opcion1 = this.opcionesA[this.indice][0];
-  opcion2 = this.opcionesA[this.indice][1];
-  opcion3 = this.opcionesA[this.indice][2];
+  opcion1 = this.getLabel(this.opcionesA[this.indice][0]);
+  opcion2 = this.getLabel(this.opcionesA[this.indice][1]);
+  opcion3 = this.getLabel(this.opcionesA[this.indice][2]);
   img1 = this.imgUrl[this.indice][0];
   img2 = this.imgUrl[this.indice][1];
   img3 = this.imgUrl[this.indice][2];
@@ -104,9 +103,20 @@ export class TarjetasComponent {
   dato2 = this.dato[this.indice][1];
   dato3 = this.dato[this.indice][2];  
 
-  verificarSeleccion(){
+  getLabel(key: string): string {
+    return PreferenciasLabels[key as keyof typeof PreferenciasLabels];
+  }
 
+  getKey(value: string): string {
+    const entries = Object.entries(PreferenciasLabels);
+    const entry = entries.find(([key, val]) => val === value);
+    return entry ? entry[0] : '';
+  }
+
+  verificarSeleccion(){
     if(this.opcSelect != ""){
+      this.opcSelect = this.getKey(this.opcSelect as string);
+      
       this.disSig = false;
     }
     if(this.indice == 0){
@@ -158,9 +168,9 @@ siguiente () {
 
 
   this.pregunta = this.preguntaA[this.indice];
-  this.opcion1 = this.opcionesA[this.indice][0];
-  this.opcion2 = this.opcionesA[this.indice][1];
-  this.opcion3 = this.opcionesA[this.indice][2];
+  this.opcion1 = this.getLabel(this.opcionesA[this.indice][0]);
+  this.opcion2 = this.getLabel(this.opcionesA[this.indice][1]);
+  this.opcion3 = this.getLabel(this.opcionesA[this.indice][2]);
   this.img1 = this.imgUrl[this.indice][0];
   this.img2 = this.imgUrl[this.indice][1];
   this.img3 = this.imgUrl[this.indice][2];
@@ -201,9 +211,9 @@ atras() {
   this.indice--;
 
   this.pregunta = this.preguntaA[this.indice];
-  this.opcion1 = this.opcionesA[this.indice][0];
-  this.opcion2 = this.opcionesA[this.indice][1];
-  this.opcion3 = this.opcionesA[this.indice][2];
+  this.opcion1 = this.getLabel(this.opcionesA[this.indice][0]);
+  this.opcion2 = this.getLabel(this.opcionesA[this.indice][1]);
+  this.opcion3 = this.getLabel(this.opcionesA[this.indice][2]);
   this.img1 = this.imgUrl[this.indice][0];
   this.img2 = this.imgUrl[this.indice][1];
   this.img3 = this.imgUrl[this.indice][2];

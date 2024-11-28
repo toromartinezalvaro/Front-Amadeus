@@ -87,8 +87,17 @@ export class PerfilComponent implements AfterViewInit {
 
   datosUsuario(){
 
+    const nomUsuario = this.nombre.value;
+    const correoUsuario = this.correo.value;
+    let avatar = '';
+
     this.destinoService.nombreS = this.nombre.value;
     this.destinoService.correoS = this.correo.value;
+
+    sessionStorage.setItem('nomUsuario', nomUsuario);
+    sessionStorage.setItem('correoUsuario', correoUsuario);
+    sessionStorage.setItem('avatar', avatar);
+    sessionStorage.setItem('destinos', "[]"); // Limpiar los destinos almacenados en sessionStorage
     
     switch(this.slideIndex){
       case 1: {
@@ -106,7 +115,7 @@ export class PerfilComponent implements AfterViewInit {
       case 4: {
         this.destinoService.avatar = AvatarImages.AVATAR4;
         break;
-      }
+      }    
     }
 
   }
