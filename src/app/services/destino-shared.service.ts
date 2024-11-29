@@ -11,12 +11,12 @@ export class DestinoSharedService {
     const data = {
       nombre: nomUsuario,
       email: correoUsuario,
-      entorno: this.destinoService.respuestasSer[0],
-      clima: this.destinoService.respuestasSer[1],
-      actividad: this.destinoService.respuestasSer[2],
-      alojamiento: this.destinoService.respuestasSer[3],
-      tiempo_viaje: this.destinoService.respuestasSer[4],
-      rango_edad: this.destinoService.respuestasSer[5],
+      entorno: sessionStorage.getItem('respuesta_0'), 
+      clima: sessionStorage.getItem('respuesta_1'), 
+      actividad: sessionStorage.getItem('respuesta_2'), 
+      alojamiento: sessionStorage.getItem('respuesta_3'), 
+      tiempo_viaje: sessionStorage.getItem('respuesta_4'), 
+      rango_edad: sessionStorage.getItem('respuesta_5'),
     };
 
     console.log('esto es lo que está devolviendo', { data });

@@ -115,18 +115,18 @@ export class TarjetasComponent {
 
   verificarSeleccion(){
     if(this.opcSelect != ""){
-      this.opcSelect = this.getKey(this.opcSelect as string);
-      
+      const key = this.getKey(this.opcSelect as string);
+      sessionStorage.setItem(`respuesta_${this.indice}`, key);
       this.disSig = false;
     }
     if(this.indice == 0){
       this.disAtras = true;
     }
-
+  
     if(this.indice >= 0){
       this.t0 = "contadorOn";
     }
-
+  
     if(this.indice >= 1){
       this.t1 = "contadorOn";
     }
@@ -142,7 +142,6 @@ export class TarjetasComponent {
     if(this.indice >= 5){
       this.t5 = "contadorOn";
     }
-
   }
 
 siguiente () {
