@@ -292,7 +292,7 @@ button:hover{
     }
     .container__general{
         width: 100%;
-        height: auto;
+        height: 100%;
         padding: 15px 5px;
         margin: 2%;
     }  
